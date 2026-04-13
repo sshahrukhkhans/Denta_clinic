@@ -3,10 +3,12 @@ import Section from '../components/Section';
 import { NavLink } from 'react-router-dom';
 import { CheckCircle2, ArrowRight, Shield, Sparkles, Stethoscope, Wrench, Smile, Diamond } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { publicAsset } from '../utils/publicAsset';
 import './Services.css';
 
 const Services = () => {
   const pageRef = useScrollReveal();
+  const equipmentImage = publicAsset('images/equipment.jpg');
 
   const servicesList = [
     {
@@ -56,7 +58,7 @@ const Services = () => {
   return (
     <div className="services-page" ref={pageRef}>
       <section className="page-header relative overflow-hidden">
-        <div className="page-header-bg" style={{backgroundImage: 'url("/images/equipment.png")'}}></div>
+        <div className="page-header-bg" style={{ backgroundImage: `url("${equipmentImage}")` }}></div>
         <div className="container text-center reveal-up relative z-10">
           <h1 className="text-white">Our Master Treatments</h1>
           <p className="subtitle text-white max-w-700 mx-auto">Providing a full spectrum of surgical, restorative, and cosmetic enhancements under one luxurious roof.</p>
@@ -98,7 +100,7 @@ const Services = () => {
       <section className="tech-banner-section reveal-fade">
          <div className="container grid grid-2 align-center gap-4">
             <div className="reveal-left">
-               <img src="/images/equipment.png" alt="Advanced Dental Technology Equipment" className="rounded-xl shadow-lg w-100" style={{border: '4px solid white'}} />
+               <img src={equipmentImage} alt="Advanced Dental Technology Equipment" className="rounded-xl shadow-lg w-100" style={{border: '4px solid white'}} />
             </div>
             <div className="reveal-right">
                <span className="section-subtitle">Innovation</span>

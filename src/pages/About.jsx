@@ -3,16 +3,21 @@ import Section from '../components/Section';
 import { Target, Award, Users, CheckCircle2, Heart, Shield, Sparkles } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { publicAsset } from '../utils/publicAsset';
 import './About.css';
 
 const About = () => {
   const pageRef = useScrollReveal();
+  const receptionImage = publicAsset('images/reception.jpg');
+  const treatingImage = publicAsset('images/treating.jpg');
+  const dentistImage = publicAsset('images/dentist.jpg');
+  const patientImage = publicAsset('images/patient.jpg');
 
   return (
     <div className="about-page" ref={pageRef}>
       {/* Page Header / Banner */}
       <section className="page-header relative overflow-hidden">
-        <div className="page-header-bg" style={{backgroundImage: 'url("/images/reception.png")'}}></div>
+        <div className="page-header-bg" style={{ backgroundImage: `url("${receptionImage}")` }}></div>
         <div className="container text-center reveal-up relative z-10">
           <h1 className="text-white">Our Heritage of Excellence</h1>
           <p className="subtitle text-white max-w-700 mx-auto">Committed to redefining the standard of dental excellence through innovation, empathy, and masterful technique since 2008.</p>
@@ -62,7 +67,7 @@ const About = () => {
       <Section>
          <div className="grid grid-2 align-center gap-4">
            <div className="facility-images reveal-zoom">
-             <img src="/images/reception.png" alt="Premium Clinic Interior with Modern Equipment" className="w-100 rounded-xl shadow-lg" style={{border: '4px solid white'}} />
+             <img src={receptionImage} alt="Premium Clinic Interior with Modern Equipment" className="w-100 rounded-xl shadow-lg" style={{border: '4px solid white'}} />
            </div>
            <div className="facility-content reveal-up">
               <span className="section-subtitle">State-of-the-Art</span>
@@ -125,7 +130,7 @@ const About = () => {
         <div className="grid grid-3">
           {/* Team Member 1 */}
           <div className="team-card reveal-zoom">
-            <img src="/images/treating.png" alt="Dr. Alexander Thompson performing dental surgery" className="team-image" />
+            <img src={treatingImage} alt="Dr. Alexander Thompson performing dental surgery" className="team-image" />
             <div className="team-info">
               <h3>Dr. Alexander Thompson</h3>
               <p className="team-role">Chief of Implantology</p>
@@ -134,7 +139,7 @@ const About = () => {
           </div>
           {/* Team Member 2 */}
           <div className="team-card reveal-zoom delay-100">
-             <img src="/images/dentist.png" alt="Dr. Elena Rodriguez, cosmetic dentistry specialist" className="team-image" />
+             <img src={dentistImage} alt="Dr. Elena Rodriguez, cosmetic dentistry specialist" className="team-image" />
             <div className="team-info">
               <h3>Dr. Elena Rodriguez</h3>
               <p className="team-role">Master Ceramist & Aesthetics</p>
@@ -143,7 +148,7 @@ const About = () => {
           </div>
           {/* Team Member 3 */}
           <div className="team-card reveal-zoom delay-200">
-             <img src="/images/patient.png" alt="Dr. Marcus Chen, endodontic specialist" className="team-image" />
+             <img src={patientImage} alt="Dr. Marcus Chen, endodontic specialist" className="team-image" />
             <div className="team-info">
               <h3>Dr. Marcus Chen</h3>
               <p className="team-role">Endodontic Specialist</p>

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import Section from '../components/Section';
 import { MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { publicAsset } from '../utils/publicAsset';
 import './Contact.css';
 
 const Contact = () => {
   const pageRef = useScrollReveal();
   const [submitted, setSubmitted] = useState(false);
+  const receptionImage = publicAsset('images/reception.jpg');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ const Contact = () => {
   return (
     <div className="contact-page" ref={pageRef}>
       <section className="page-header relative overflow-hidden">
-        <div className="page-header-bg" style={{backgroundImage: 'url("/images/reception.png")'}}></div>
+        <div className="page-header-bg" style={{ backgroundImage: `url("${receptionImage}")` }}></div>
         <div className="container text-center reveal-up relative z-10">
           <h1 className="text-white">Let's Connect</h1>
           <p className="subtitle text-white max-w-700 mx-auto">We're here to answer any questions you have and schedule your consultation at a time convenient for you.</p>

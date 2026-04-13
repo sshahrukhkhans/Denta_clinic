@@ -3,15 +3,22 @@ import Section from '../components/Section';
 import { ArrowRight, CheckCircle2, Star, Quote, Award, Users, Smile, Stethoscope, Shield, Heart, Zap } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { publicAsset } from '../utils/publicAsset';
 import './Home.css';
 
 const Home = () => {
   const pageRef = useScrollReveal();
+  const heroImage = publicAsset('images/hero.jpg');
+  const receptionImage = publicAsset('images/reception.jpg');
+  const equipmentImage = publicAsset('images/equipment.jpg');
+  const treatingImage = publicAsset('images/treating.jpg');
+  const blogImage = publicAsset('images/blog_1.jpg');
+  const patientImage = publicAsset('images/patient.jpg');
 
   return (
     <div className="home-page" ref={pageRef}>
       {/* Premium Hero Section */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url("${heroImage}")` }}>
         <div className="hero-bg-overlay"></div>
         <div className="hero-decorative-circle"></div>
         <div className="container hero-container">
@@ -83,8 +90,8 @@ const Home = () => {
       <Section>
         <div className="grid grid-2 align-center gap-4">
           <div className="about-collage-wrapper reveal-left">
-             <img src="/images/reception.png" alt="Luxurious Reception Area" className="about-image image-main" />
-             <img src="/images/equipment.png" alt="State-of-the-Art Equipment" className="about-image image-secondary shadow-lg" />
+             <img src={receptionImage} alt="Luxurious Reception Area" className="about-image image-main" />
+             <img src={equipmentImage} alt="State-of-the-Art Equipment" className="about-image image-secondary shadow-lg" />
              <div className="experience-badge">
                <span className="experience-number">15+</span>
                <span className="experience-text">Years of Excellence</span>
@@ -128,7 +135,7 @@ const Home = () => {
       <Section lightBg>
          <div className="doctor-highlight-wrapper">
             <div className="doctor-image-container reveal-left">
-               <img src="/images/treating.png" alt="Dr. Thompson performing a dental procedure" className="doctor-image" />
+               <img src={treatingImage} alt="Dr. Thompson performing a dental procedure" className="doctor-image" />
             </div>
             <div className="doctor-info reveal-right">
                <span className="section-subtitle">Master Expertise</span>
@@ -204,7 +211,7 @@ const Home = () => {
          <div className="grid grid-3">
             <div className="blog-card reveal-up">
                <div className="blog-image-wrapper">
-                  <img src="/images/blog_1.png" alt="Oral Hygiene Guide" className="blog-image" />
+                  <img src={blogImage} alt="Oral Hygiene Guide" className="blog-image" />
                   <span className="blog-category">Hygiene</span>
                </div>
                <div className="blog-content">
@@ -217,7 +224,7 @@ const Home = () => {
 
             <div className="blog-card reveal-up delay-100">
                <div className="blog-image-wrapper">
-                  <img src="/images/equipment.png" alt="Dental Implant Equipment" className="blog-image" />
+                  <img src={equipmentImage} alt="Dental Implant Equipment" className="blog-image" />
                   <span className="blog-category">Treatments</span>
                </div>
                <div className="blog-content">
@@ -230,7 +237,7 @@ const Home = () => {
 
             <div className="blog-card reveal-up delay-200">
                <div className="blog-image-wrapper">
-                  <img src="/images/patient.png" alt="Smiling Patient" className="blog-image" />
+                  <img src={patientImage} alt="Smiling Patient" className="blog-image" />
                   <span className="blog-category">Cosmetic</span>
                </div>
                <div className="blog-content">

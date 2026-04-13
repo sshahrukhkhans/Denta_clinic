@@ -2,10 +2,12 @@ import React from 'react';
 import Section from '../components/Section';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { publicAsset } from '../utils/publicAsset';
 import './Blog.css';
 
 const Blog = () => {
   const pageRef = useScrollReveal();
+  const receptionImage = publicAsset('images/reception.jpg');
 
   const posts = [
     {
@@ -14,7 +16,7 @@ const Blog = () => {
       excerpt: "Discover the specific tools and techniques top dentists use to maintain perfect oral health between their clinical visits.",
       date: "Oct 12, 2023",
       category: "Hygiene",
-      image: "/images/blog_1.png",
+      image: publicAsset('images/blog_1.jpg'),
       author: "Dr. Elena Rodriguez",
       readTime: "6 min read"
     },
@@ -24,7 +26,7 @@ const Blog = () => {
       excerpt: "A comprehensive walkthrough of the permanent solution to missing teeth, leveraging 3D guided surgery for painless recovery.",
       date: "Nov 05, 2023",
       category: "Treatments",
-      image: "/images/equipment.png",
+      image: publicAsset('images/equipment.jpg'),
       author: "Dr. Alexander Thompson",
       readTime: "8 min read"
     },
@@ -34,7 +36,7 @@ const Blog = () => {
       excerpt: "An honest comparison to help you choose the ideal orthodontic path for your lifestyle, budget, and timeline.",
       date: "Dec 01, 2023",
       category: "Cosmetic",
-      image: "/images/patient.png",
+      image: publicAsset('images/patient.jpg'),
       author: "Dr. Marcus Chen",
       readTime: "5 min read"
     },
@@ -44,7 +46,7 @@ const Blog = () => {
       excerpt: "Recent studies link gum disease to cardiovascular issues. Learn why taking care of your teeth might be the best thing for your heart.",
       date: "Jan 14, 2024",
       category: "Wellness",
-      image: "/images/dentist.png",
+      image: publicAsset('images/dentist.jpg'),
       author: "Dr. Sarah Jenkins",
       readTime: "7 min read"
     }
@@ -53,7 +55,7 @@ const Blog = () => {
   return (
     <div className="blog-page" ref={pageRef}>
       <section className="page-header relative overflow-hidden">
-        <div className="page-header-bg" style={{backgroundImage: 'url("/images/reception.png")'}}></div>
+        <div className="page-header-bg" style={{ backgroundImage: `url("${receptionImage}")` }}></div>
         <div className="container text-center reveal-up relative z-10">
           <h1 className="text-white">Dental Insights & News</h1>
           <p className="subtitle text-white max-w-700 mx-auto">Deep dives into modern dental procedures, clinic updates, and professional hygiene advice from our leading experts.</p>
@@ -65,7 +67,7 @@ const Blog = () => {
         <div className="featured-post mb-4 reveal-up">
            <div className="grid grid-2 collapse-on-mobile gap-0">
              <div className="featured-image-wrapper">
-               <img src="/images/reception.png" alt="NovaDental Opens New Pediatric Wing" className="featured-image" />
+               <img src={receptionImage} alt="NovaDental Opens New Pediatric Wing" className="featured-image" />
              </div>
              <div className="featured-content">
                <span className="blog-tag">Clinic News</span>

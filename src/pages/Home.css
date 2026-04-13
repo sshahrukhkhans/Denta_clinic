@@ -5,7 +5,9 @@
   padding: 8rem 0 9.2rem;
   overflow: hidden;
   position: relative;
-  background: url('/images/hero.png') center / cover no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-bg-overlay {
