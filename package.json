@@ -1,9 +1,9 @@
 {
-  "name": "dental-clinic",
+  "name": "denta-clinic",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sshahrukhkhans.github.io/Dental_clinic/",
+  "homepage": "https://sshahrukhkhans.github.io/Denta_clinic/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
